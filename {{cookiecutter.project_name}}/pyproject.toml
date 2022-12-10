@@ -5,11 +5,10 @@ description = "{{cookiecutter.description}}"
 authors = ["{{cookiecutter.author_name}}"]
 readme = "README.md"
 license = "MIT"
-packages = [{include = "{{cookiecutter.package_name}}", from = "src"}]
+packages = [{include = "{{cookiecutter.project_slug}}", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-
 
 [tool.poetry.group.dev.dependencies]
 mkinit = "^1.0.0"
@@ -18,10 +17,13 @@ flake8-commas = {git = "https://github.com/LEv145/flake8-commas"}
 isort = "^5.10.1"
 pyproject-flake8 = "^6.0.0"
 
+[tool.poetry.scripts]
+{{cookiecutter.project_slug}} = "{{cookiecutter.project_slug}}.__main__:main"
+
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
 
 [mypy]
 strict_optional = true
@@ -35,4 +37,4 @@ include_trailing_comma = true
 multi_line_output = 3
 force_grid_wrap = 2
 lines_after_imports = 2
-src_paths = ["{{cookiecutter.package_name}}", "tests"]
+src_paths = ["{{cookiecutter.project_slug}}", "tests"]
