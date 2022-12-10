@@ -1,7 +1,6 @@
 # My project template
 
-This is the template that is convenient for me for projects (Not modules)
-
+This is the template that is convenient for me for projects (Not modules) <br/>
 I put the most convenient patterns in my opinion here
 
 ## How to use
