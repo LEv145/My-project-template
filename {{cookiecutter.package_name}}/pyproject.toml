@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "{{cookiecutter.project_name.capitalize()}}"
+version = "0.1.0"
+description = "{{cookiecutter.description}}"
+authors = ["{{cookiecutter.author_name}}"]
+readme = "README.md"
+license = "MIT"
+packages = [{include = "{{cookiecutter.package_name}}", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+mkinit = "^1.0.0"
+mypy = "^0.991"
+flake8-commas = {git = "https://github.com/LEv145/flake8-commas"}
+isort = "^5.10.1"
+pyproject-flake8 = "^6.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[mypy]
+strict_optional = true
+
+[tool.flake8]
+max-line-length = 99
+docstring_style="google"
+
+[tool.isort]
+include_trailing_comma = true
+multi_line_output = 3
+force_grid_wrap = 2
+lines_after_imports = 2
+src_paths = ["{{cookiecutter.package_name}}", "tests"]
