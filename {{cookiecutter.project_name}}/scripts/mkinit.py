@@ -1,5 +1,5 @@
-from os import system
+import subprocess
 from sys import argv
 
 
-system(f"mkinit {argv[1]} -w --black --nomods --relative --recursive")
+subprocess.run(f"mkinit {argv[1]} -w --black --nomods --relative --recursive".split())
