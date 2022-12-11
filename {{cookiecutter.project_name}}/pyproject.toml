@@ -4,7 +4,9 @@ version = "0.1.0"
 description = "{{cookiecutter.description}}"
 authors = ["{{cookiecutter.author_name}}"]
 readme = "README.md"
-license = "MIT"
+{%- if cookiecutter.open_source_license != "Not open source"%}
+license = "{{cookiecutter.open_source_license}}"
+{%- endif %}
 packages = [{include = "{{cookiecutter.project_slug}}", from = "src"}]
 
 [tool.poetry.dependencies]

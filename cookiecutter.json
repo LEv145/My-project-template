@@ -2,5 +2,12 @@
     "project_name": "My Awesome Project",
     "project_slug": "{{cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_').replace('.', '_')}}",
     "description": "Behold My Awesome Project!",
-    "author_name": "LEv145"
+    "author_name": "LEv145",
+    "open_source_license": [
+        "MIT",
+        "BSD-3-Clause",
+        "GPL-3.0-or-later",
+        "Apache-2.0",
+        "Not open source"
+    ]
 }

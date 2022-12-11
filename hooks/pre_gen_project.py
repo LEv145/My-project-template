@@ -6,9 +6,14 @@ MODULE_REGEX = r"^[_a-zA-Z][_a-zA-Z0-9]+$"
 MODULE_NAME = "{{cookiecutter.project_slug}}"
 
 
-if not re.match(MODULE_REGEX, MODULE_NAME):
-    print(
-        f"ERROR: The project slug ({MODULE_NAME}) is not a valid Python module name."
-        " Please do not use \"-\" and use \"_\" instead"
-    )
-    sys.exit(1)
+def main() -> None:
+    if not re.match(MODULE_REGEX, MODULE_NAME):
+        print(
+            f"ERROR: The project slug ({MODULE_NAME}) is not a valid Python module name."
+            " Please do not use \"-\" and use \"_\" instead"
+        )
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
