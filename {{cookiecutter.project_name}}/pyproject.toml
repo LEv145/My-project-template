@@ -18,25 +18,33 @@ mypy = "^0.991"
 flake8-commas = {git = "https://github.com/LEv145/flake8-commas"}
 isort = "^5.10.1"
 pyproject-flake8 = "^6.0.0"
+pylint = "^2.15.9"
 
 [tool.poetry.scripts]
 {{cookiecutter.project_slug}} = "{{cookiecutter.project_slug}}.__main__:main"
 
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
 
 [mypy]
 strict_optional = true
 
 [tool.flake8]
 max-line-length = 99
-docstring_style="google"
+ignore = [
+    "F401",  # unused-import
+]
 
 [tool.isort]
 include_trailing_comma = true
 multi_line_output = 3
 force_grid_wrap = 2
 lines_after_imports = 2
-src_paths = ["{{cookiecutter.project_slug}}", "tests"]
+src_paths = ["src/{{cookiecutter.project_slug}}", "tests"]
+
+[tool.pylint]
+disable = [
+    "unused-import",
+]
